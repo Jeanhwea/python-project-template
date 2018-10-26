@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-import logging.config
-
-logging.config.fileConfig('logging.conf')
+import logging
+logger = logging.getLogger(__name__)
 
 def hello():
+  logger.info('hello world')
   return 'hello'
