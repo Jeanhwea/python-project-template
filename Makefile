@@ -6,4 +6,7 @@ init:
 test:
 	python3 -m unittest
 
+preview:
+	grip -b
+
 .PHONY: init test
