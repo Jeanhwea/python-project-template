@@ -3,5 +3,9 @@ import logging
 logger = logging.getLogger(__name__)
 
 def hello():
-  logger.info('hello world')
+  logger.debug('debug message')
+  logger.info('info message')
+  logger.warning  ('warn message')
+  logger.error('error message')
+  logger.critical('critical message')
   return 'hello'
