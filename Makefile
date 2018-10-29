@@ -1,9 +1,9 @@
 all: test
 
 init:
-	pip install -r requirements.txt
+	pip3 install -r requirements.txt
 
 test:
-	python -m unittest
+	python3 -m unittest
 
 .PHONY: init test
