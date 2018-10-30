@@ -1,12 +1,15 @@
+PYTHON := python
+PIP    := pip
+
 all: test
 
 init:
-	pip3 install -r requirements.txt
+	$(PIP) install -r requirements.txt
 
 test:
-	python3 -m unittest
+	$(PYTHON) -m unittest
 
-preview:
+browse:
 	grip -b
 
 .PHONY: init test
