@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-import logging.config
 import os
 import sys
-
-logging.config.fileConfig('logging.conf')
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+import logging.config
+from sample.tool.config import load_logging_config
+
+logging.config.dictConfig(load_logging_config())

@@ -1,0 +1,33 @@
+# https://docs.python.org/3/library/logging.html
+logging:
+  version: 1
+  disable_existing_loggers: False
+  formatters:
+    simple:
+      format: '%(levelname).1s %(message)s'
+    verbose:
+      format: '[%(levelname).4s][%(asctime)s] %(name)s.%(filename)s:%(lineno)d:%(funcName)s(): %(message)s'
+    precise:
+      format: '[%(levelname).4s][%(asctime)s] %(pathname)s:%(lineno)d:%(funcName)s(): %(message)s'
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: DEBUG
+      formatter: simple
+    trace:
+      class: logging.handlers.TimedRotatingFileHandler
+      level: INFO
+      formatter: verbose
+      filename: 'log/trace.log'
+      backupCount: 10
+      encoding: 'utf8'
+    detail:
+      class: logging.handlers.TimedRotatingFileHandler
+      level: DEBUG
+      formatter: precise
+      filename: 'log/detail.log'
+      backupCount: 10
+      encoding: 'utf8'
+  root:
+    level: DEBUG
+    handlers: [console, trace, detail]

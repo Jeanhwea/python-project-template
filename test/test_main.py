@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from sample.core import hello
+from sample.main import hello
+
 
 class TestBasic(unittest.TestCase):
 
-  def test_hello(self):
+  def test_main(self):
     self.assertEqual(hello(), 'hello')
